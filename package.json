@@ -3,15 +3,7 @@
   "version": "0.0.0",
   "main": "/src/index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1"
+    "test": "jest"
   },
   "browserslist": {
     "production": [
@@ -24,5 +16,28 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "This is NamasteReact",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divyatiwari5/NamasteReact.git"
+  },
+  "author": "Divya Tiwari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/divyatiwari5/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/divyatiwari5/NamasteReact#readme",
+  "keywords": [
+    "react",
+    "namaste-react"
+  ],
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
