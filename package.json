@@ -1,7 +1,6 @@
 {
   "name": "react.dev",
   "version": "0.0.0",
-  "main": "/src/index.js",
   "scripts": {
     "test": "jest"
   },
@@ -12,9 +11,7 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 2 versions"
     ]
   },
   "description": "This is NamasteReact",
