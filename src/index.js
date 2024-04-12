@@ -14,13 +14,18 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
  * <div class="parent">
  *  <div class="child">
  *      <h1>Hello World in nested div!</h1>
+ *      <h2>I am h2 tag</h2>
  *  </div>
  * </div>
  */
 
 const parent = React.createElement("div", {id: "parent"}, 
-    React.createElement("div", {id: "child"}, 
-    React.createElement("h1", {}, "Hello world in nested div!")))
+    React.createElement("div", {id: "child"},
+    [
+        React.createElement("h1", {key: "key-h1"}, "Hello world in nested div!"),
+        React.createElement("h2", {key: "key-h2"}, "Hello world in nested div!")
+    ]
+    ));
 
 // render method is responsible for creating h1 tag out of the heading object
 root.render(parent);
