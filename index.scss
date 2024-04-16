@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    border: 1px black solid;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 100px;
+}
+
+.nav-items {
+    align-self: center;
+    ul {
+        display: flex;
+        list-style-type: none;
+        gap: 10;
+        font-size: 24px;
+    }
+    li {
+        padding: 10px;
+        
+    }
+}

@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namaste React</title>
-
+    <link rel="stylesheet" href="index.scss"></link>
 </head>
 <body>
-    <!---This will get replaced by root.render() in index.js-->
-    <h1>TOP OF ROOT (Not going to be replaced)</h1>
     <!--We can still use react under this root; Rest of the html page will remain same-->
-    <div id="root">I am going to be replaced</div>
-    <div id="root1">I am not going to be replaced</div>
-
-    <h1>BOTTOM OF ROOT (Not going to be replaced)</h1>
-    <script type="module" src="./index.js"></script>
+    <div id="root">Not rendered</div>
+    <script type="module" src="./App.js"></script>
 </body>
 </html>
