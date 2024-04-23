@@ -66,5 +66,28 @@ react.production.js:
     - Optimized, minified, smaller in size
     - does not provide debuuging tools, error handling
 
+- async and defer attribute in script tag
 
-- async and defer
+async attribute allows fetching of the script along with HTML parsing in parallel and puts the HTML parsing on pause state when execution of the scripts happen. Once that is complete, it resumes HTML parsing.
+async does not execute scripts in the same order in which they are defined.
+
+defer attribute also allow fetching of the script along with HTML parsing in parallel but here it executes the scripts once 
+HTML parsing is complete.
+defer exceute scripts in the same order in which they are defined.
+
+# Episode 2
+
+- NPM
+    It's a node package manager but it does not stand for Node Package Manager :D
+
+- Parcel/Webpack
+    - TLDR; Parcel is a BEAST!!!
+    - Optimizes, minify, build, deploy
+    - host local app on https
+    - Tree shaking
+    - Reduces build time due to caching
+    - Image optimization
+    - Differential building - to support old browsers
+    - Provides diagnostics; Error handling
+    - automatically refreshes page - HMR - "Hot Module Management"
+    - it uses "File Watching Algorithm" written in C++ to keep a track of every save we do in our project

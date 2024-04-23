@@ -14,7 +14,7 @@
 - Code splitting
 - Differential Bundling - to support older browsers;
     if <script type="module"></script>, it will generate a nomudule fallback for older browsers
-- Provides diagnostics; Errorr handling
+- Provides diagnostics; Error handling
 - HTTPS - can run our app locally on https
 - Tree shaking - remove unused code
 - Provide different dev and prod build

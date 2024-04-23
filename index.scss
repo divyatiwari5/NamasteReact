@@ -21,3 +21,58 @@
         
     }
 }
+
+.search {
+    .search-input {
+        width: 50%;
+        height: 30px;
+        margin-top: 20px;
+        border: 2px solid black;
+        border-radius: 50px;
+        padding: 10px;
+
+    }
+}
+.restaurant-container {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 20px;
+}
+
+.restaurant {
+    display: grid;
+    grid-auto-flow: row;
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 250px;
+    .head {
+        height: 175px;
+        position: relative;
+        .banner {
+            height: 100%;
+            width: 100%;
+            border-top-right-radius: 30px;
+            border-top-left-radius: 30px;
+        }
+        .offer {
+            position: absolute;
+            bottom: -10px;
+            margin-left: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+        }
+    }
+    .content {
+        margin-left: 10px;
+        padding: 12px;
+        .info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+    
+}

@@ -1,5 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import Header from "./src/Header";
+import Body from "./src/Body";
 
 const root = createRoot(document.getElementById("root"));
 
@@ -17,44 +19,11 @@ const root = createRoot(document.getElementById("root"));
  *  - Contact
  */
 
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img
-                 className="logo"
-                 src="https://img.freepik.com/premium-vector/click-food-logo-design-template_145155-4164.jpg?size=626&ext=jpg"></img>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-            
-        </div>
-    )
-}
-
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">
-
-            </div>
-            <div className="restaurant-container">
-                
-            </div>
-        </div>
-    )
-}
- 
-
 const AppLayout = () => {
     return(
         <div className="app">
             <Header />
+            <Body />
         </div>
     )
 }
