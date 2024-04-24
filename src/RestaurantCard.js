@@ -6,7 +6,7 @@ const RestaurantCard = (props) => {
                 <img
                     className="banner"
                     src={'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/'+restaurantInfo?.cloudinaryImageId}></img>
-                <h3 className="offer">{restaurantInfo?.aggregatedDiscountInfoV3?.header}</h3>
+                <h3 className="offer">{restaurantInfo?.aggregatedDiscountInfoV3?.header} {restaurantInfo?.aggregatedDiscountInfoV3?.subHeader}</h3>
             </div>
             <div className="content">
                 <div className="title">{restaurantInfo?.name}</div>
