@@ -2,30 +2,43 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import Header from "./src/Header";
 import Body from "./src/Body";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import About from "./src/About";
+import Error from "./src/Error";
+import Contact from "./src/Contact";
 
 const root = createRoot(document.getElementById("root"));
-
-/***
- * Header
- *  - logo 
- *  - nav items (home, about, cart), 
- * Body
- *  - Search
- *  - RestaurantContainer
- *    - RestaurantCard
- * Footer
- *  - Link item
- *  - Address
- *  - Contact
- */
 
 const AppLayout = () => {
     return(
         <div className="app">
             <Header />
-            <Body />
+            <Outlet />
         </div>
     )
 }
 
-root.render(<AppLayout />)
+const appRouter = createBrowserRouter([
+    {
+        path: "/",
+        element: <AppLayout />,
+        children: [
+            {
+                path: "/",
+                element: <Body />
+            },
+            {
+                path: "/about",
+                element: <About />
+            },
+            {
+                path: "/contact",
+                element: <Contact />
+            }
+        ],
+        errorElement: <Error />,
+    },
+    
+])
+
+root.render(<RouterProvider router={appRouter} />)
