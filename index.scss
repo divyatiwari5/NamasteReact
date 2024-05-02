@@ -1,11 +1,19 @@
 .header {
     display: flex;
-    border: 1px black solid;
     justify-content: space-between;
+    box-shadow: 0 .4rem 1.8rem #1c1c1c1f;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0 20px;
+    z-index: 1;
+    background: white;
+    height: 80px;
 }
 
 .logo {
-    height: 100px;
+    height: 75px;
 }
 
 .nav-items {
@@ -14,11 +22,11 @@
         display: flex;
         list-style-type: none;
         gap: 10;
-        font-size: 24px;
+        font-size: 18px;
     }
     li {
         padding: 10px;
-        
+        color: #3d4152;
     }
 }
 
@@ -34,26 +42,29 @@
     }
 }
 .restaurant-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     margin-top: 20px;
 }
 
 .restaurant {
-    display: grid;
-    grid-auto-flow: row;
-    border: 1px solid black;
     border-radius: 30px;
     width: 250px;
+    padding: 10px;
+    border: 0.1rem solid white;
+
+    &:hover {
+        border: 0.1rem solid rgb(232, 232, 232);
+        box-shadow: rgba(28, 28, 28, 0.12) 0 0.4rem 1.8rem;
+    }
     .head {
         height: 175px;
         position: relative;
         .banner {
             height: 100%;
             width: 100%;
-            border-top-right-radius: 30px;
-            border-top-left-radius: 30px;
+            border-radius: 20px;
         }
         .offer {
             position: absolute;
@@ -65,27 +76,59 @@
         }
     }
     .content {
-        margin-left: 10px;
-        padding: 12px;
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #3d4152;
+
+            .rating {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+        }
         .info {
             display: flex;
             flex-direction: row;
             align-items: center;
             gap: 5px;
         }
+        .desc {
+            display: flex;
+            justify-content: space-between;
+            color: #3d4152;
+            .cuisine {
+                text-overflow: ellipsis;
+                max-width: 50%;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
     }
     
 }
 
 .shimmer-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: 10px;
-    margin: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 100px auto auto;
+
     .card {
         height: 300px;
         width: 250px;
         border-radius: 30px;
         background-color: #f0f0f0;
     }
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.body {
+    max-width: fit-content;
+    margin: 80px auto auto;
 }
