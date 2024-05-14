@@ -1,0 +1,10 @@
+.body {
+    max-width: fit-content;
+    margin: 80px auto auto;
+}
+.restaurant-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 20px;
+}

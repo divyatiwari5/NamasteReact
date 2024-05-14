@@ -1,0 +1,59 @@
+.restaurant {
+  border-radius: 30px;
+  width: 250px;
+  padding: 10px;
+  border: 0.1rem solid white;
+
+  &:hover {
+    border: 0.1rem solid rgb(232, 232, 232);
+    box-shadow: rgba(28, 28, 28, 0.12) 0 0.4rem 1.8rem;
+  }
+  .head {
+    height: 175px;
+    position: relative;
+    .banner {
+      height: 100%;
+      width: 100%;
+      border-radius: 20px;
+    }
+    .offer {
+      position: absolute;
+      bottom: -10px;
+      margin-left: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: white;
+    }
+  }
+  .content {
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #3d4152;
+
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+    }
+    .info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+    }
+    .desc {
+      display: flex;
+      justify-content: space-between;
+      color: #3d4152;
+      .cuisine {
+        text-overflow: ellipsis;
+        max-width: 50%;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+  }
+}

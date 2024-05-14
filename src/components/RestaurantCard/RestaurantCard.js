@@ -1,6 +1,5 @@
 const RestaurantCard = (props) => {
   const restaurantInfo = props?.restaurant?.info;
-  console.log({ restaurantInfo });
   return (
     <div className="restaurant">
       <div className="head">

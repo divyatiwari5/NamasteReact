@@ -1,8 +1,9 @@
-import Search from "./Search";
-import RestaurantCard from "./RestaurantCard";
+import Search from "../Search/Search";
+import RestaurantCard from "../RestaurantCard/RestaurantCard";
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+import Shimmer from "../Shimmer/Shimmer";
 import { Link } from "react-router-dom";
+import { RESTAURANT_LIST_API } from "../../utility/constants";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -11,9 +12,7 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.633868&lng=77.20531319999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RESTAURANT_LIST_API);
     const jsonData = await data.json();
     const restaurant = jsonData?.data?.cards?.find((card) => {
       return card?.card?.card?.id === "restaurant_grid_listing";
@@ -57,15 +56,12 @@ const Body = () => {
                 {filteredRestaurant.map((restaurant) => {
                   return (
                     <Link
-                      to={'/restaurant/'+ restaurant?.info?.id}
+                      to={"/restaurant/" + restaurant?.info?.id}
                       key={restaurant?.info?.id}
                       className="link"
                     >
-                      <RestaurantCard
-                        restaurant={restaurant}
-                      />
+                      <RestaurantCard restaurant={restaurant} />
                     </Link>
-                    
                   );
                 })}
               </>

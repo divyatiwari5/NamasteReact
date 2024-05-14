@@ -1,12 +1,12 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import Header from "./src/Header";
-import Body from "./src/Body";
+import Header from "./src/components/Header/Header";
+import Body from "./src/components/Body/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import About from "./src/About";
-import Error from "./src/Error";
-import Contact from "./src/Contact";
-import RestaurantDetail from "./src/RestaurantDetail";
+import About from "./src/components/About/About";
+import Error from "./src/components/Error/Error";
+import Contact from "./src/components/Contact/Contact";
+import RestaurantDetail from "./src/components/RestaurantDetail/RestaurantDetail";
 
 const root = createRoot(document.getElementById("root"));
 
