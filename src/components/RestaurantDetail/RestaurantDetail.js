@@ -1,21 +1,11 @@
-import { useEffect, useState } from "react";
-import { MEDIA_ASSET_LINK, RESTAURANT_DETAIL_API } from "../../utility/constants";
+import { MEDIA_ASSET_LINK } from "../../utility/constants";
 import { useParams } from "react-router-dom";
 import Shimmer from "../Shimmer/Shimmer";
+import useGetRestaurantDetails from "../../utility/useGetRestaurantDetails";
 
 const RestaurantDetail = () => {
   const { id } = useParams();
-  const [menuItem, setMenuItem] = useState(null);
-  const fetchRestaurantDetails = async () => {
-    const data = await fetch(RESTAURANT_DETAIL_API + `&restaurantId=${id}`);
-    const jsonData = await data.json();
-    const items = jsonData?.data?.cards.find((data) => data?.groupedCard);
-    setMenuItem(items?.groupedCard.cardGroupMap?.REGULAR?.cards[2]?.card?.card);
-  };
-
-  useEffect(() => {
-    fetchRestaurantDetails();
-  }, []);
+  const menuItem = useGetRestaurantDetails(id);
 
   return (
     <div className="restaurant-detail">

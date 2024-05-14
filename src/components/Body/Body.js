@@ -3,30 +3,26 @@ import RestaurantCard from "../RestaurantCard/RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "../Shimmer/Shimmer";
 import { Link } from "react-router-dom";
-import { RESTAURANT_LIST_API } from "../../utility/constants";
+import useGetRestaurant from "../../utility/useGetRestaurant";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [pageLoading, setPageLoading] = useState(true);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-
-  const fetchData = async () => {
-    const data = await fetch(RESTAURANT_LIST_API);
-    const jsonData = await data.json();
-    const restaurant = jsonData?.data?.cards?.find((card) => {
-      return card?.card?.card?.id === "restaurant_grid_listing";
-    });
-    const restaurantList =
-      restaurant?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-    setListOfRestaurant(restaurantList);
-    setFilteredRestaurant(restaurantList);
-    setPageLoading(false);
-  };
+  const restaurants = useGetRestaurant();
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    setFilteredRestaurant(restaurants);
+    setListOfRestaurant(restaurants);
+  }, [restaurants]);
+
+  useEffect(() => {
+    if (listOfRestaurant?.length > 0) {
+      setPageLoading(false);
+    }
+  }, [listOfRestaurant]);
+  console.log(pageLoading)
 
   const onSearchClick = (searchValue) => {
     const filteredResult = listOfRestaurant.filter((res) =>
