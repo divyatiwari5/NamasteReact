@@ -1,9 +1,10 @@
 import Search from "../Search/Search";
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "../Shimmer/Shimmer";
 import { Link } from "react-router-dom";
 import useGetRestaurant from "../../utility/useGetRestaurant";
+import { UserContext } from "../../utility/userContext";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -11,7 +12,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const restaurants = useGetRestaurant();
-
+  const {setUserInfo } = useContext(UserContext);
   useEffect(() => {
     setFilteredRestaurant(restaurants);
     setListOfRestaurant(restaurants);
@@ -22,7 +23,6 @@ const Body = () => {
       setPageLoading(false);
     }
   }, [listOfRestaurant]);
-  console.log(pageLoading)
 
   const onSearchClick = (searchValue) => {
     const filteredResult = listOfRestaurant.filter((res) =>
@@ -43,6 +43,7 @@ const Body = () => {
               onSearchTextChange={setSearchText}
               onSearchClick={onSearchClick}
             />
+            <input onChange={(e) => setUserInfo(e.target.value)}/>
           </div>
           <div className="restaurant-container">
             {filteredRestaurant.length === 0 ? (

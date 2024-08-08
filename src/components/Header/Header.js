@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../utility/userContext";
 
 const Header = () => {
+  const data = useContext(UserContext);
   return (
     <div className="header">
       <div className="logo-container">
@@ -23,6 +26,7 @@ const Header = () => {
           <Link className="link">
             <li>Cart</li>
           </Link>
+          <li>{data.loggedInUser}</li>
         </ul>
       </div>
     </div>
