@@ -26,3 +26,32 @@ Command for local build
 Command for prod build
 
 ```npx parcel build index.html```
+
+
+# 2 types of routing in web apps
+
+- Client side routing
+- Server side routing
+
+# Redux Toolkit
+- Install @reduxjs/toolkit, react-redux
+- Build our store
+- Connect store to app
+- Create slice (for eg: cart slice)
+- Dispatch action
+- Selector
+
+# Types of Testing
+ - Unit Testing
+ - Integration Testing
+ - End to End Tesing (using cypress, selenium, puppeter)
+
+# Setting up Testing
+
+- Install React Testing Library
+- Install Jest
+- Install babel
+- Config babel
+- Config parcel config file to disable default babel transpilation (.parcelrc)
+- Jest configuration (npx jest --init)
+- Install jsdom library
